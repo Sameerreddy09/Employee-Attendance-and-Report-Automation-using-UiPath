@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Attendance | Employee Attendance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav><strong>Employee Attendance</strong><a href="{{ url_for('main.dashboard') }}">Dashboard</a></nav>
+  <main class="container narrow">
+    <h1>Add or update attendance</h1>
+    <p class="muted">An employee ID and date identify one record. Submitting the same pair updates it.</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}<div class="alert {{ category }}">{{ message }}</div>{% endfor %}
+    {% endwith %}
+    <form method="post" class="card form-grid">
+      <label for="employee_id">Employee ID</label>
+      <input id="employee_id" name="employee_id" maxlength="30" value="{{ form.get('employee_id', '') }}" required>
+      <label for="employee_name">Employee name</label>
+      <input id="employee_name" name="employee_name" maxlength="100" value="{{ form.get('employee_name', '') }}" required>
+      <label for="date">Date</label>
+      <input id="date" name="date" type="date" value="{{ form.get('date', '') }}" required>
+      <label for="status">Status</label>
+      <select id="status" name="status" required onchange="toggleTimes()">
+        {% for status in ['Present', 'Absent', 'Leave'] %}
+          <option value="{{ status }}" {% if form.get('status', 'Present') == status %}selected{% endif %}>{{ status }}</option>
+        {% endfor %}
+      </select>
+      <div class="time-row" id="time-fields">
+        <div><label for="check_in_time">Check-in time</label><input id="check_in_time" name="check_in_time" type="time" value="{{ form.get('check_in_time', '') }}"></div>
+        <div><label for="check_out_time">Check-out time</label><input id="check_out_time" name="check_out_time" type="time" value="{{ form.get('check_out_time', '') }}"></div>
+      </div>
+      <button type="submit">Save attendance</button>
+    </form>
+  </main>
+  <script>
+    function toggleTimes() {
+      const enabled = document.getElementById('status').value === 'Present';
+      document.querySelectorAll('#time-fields input').forEach(input => {
+        input.disabled = !enabled;
+        if (!enabled) input.value = '';
+      });
+    }
+    toggleTimes();
+  </script>
+</body>
+</html>

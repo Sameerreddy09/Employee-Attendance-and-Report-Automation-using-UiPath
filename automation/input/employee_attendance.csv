@@ -1,0 +1,11 @@
+employee_id,employee_name,date,status,check_in_time,check_out_time
+EMP101,Kavya Menon,2026-10-05,Present,09:00,17:35
+EMP102,Rahul Verma,2026-10-05,Absent,,
+EMP103,Sneha Kapoor,2026-10-05,Leave,,
+EMP104,Aditya Joshi,2026-10-05,Present,08:52,17:20
+EMP105,Priya Shah,2026-10-05,Present,09:08,17:48
+EMP106,Nikhil Kumar,2026-10-05,Remote,09:05,17:40
+EMP107,Ishita Roy,2026-10-05,Absent,,
+EMP108,Manish Gupta,2026-10-05,Present,08:57,17:30
+EMP109,Divya Reddy,2026-10-05,Leave,,
+EMP110,Akash Bose,2026-10-05,Present,09:12,18:00

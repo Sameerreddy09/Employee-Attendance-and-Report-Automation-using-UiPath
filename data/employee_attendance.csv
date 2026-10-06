@@ -1,0 +1,13 @@
+employee_id,employee_name,date,status,check_in_time,check_out_time
+EMP001,Aarav Sharma,2026-10-01,Present,09:02,17:35
+EMP002,Diya Patel,2026-10-01,Present,08:55,17:20
+EMP003,Rohan Mehta,2026-10-01,Absent,,
+EMP004,Ananya Iyer,2026-10-01,Leave,,
+EMP005,Vikram Singh,2026-10-01,Present,09:10,18:00
+EMP001,Aarav Sharma,2026-10-02,Present,09:00,17:32
+EMP002,Diya Patel,2026-10-02,Leave,,
+EMP003,Rohan Mehta,2026-10-02,Present,09:06,17:41
+EMP004,Ananya Iyer,2026-10-02,Present,08:58,17:25
+EMP005,Vikram Singh,2026-10-02,Absent,,
+EMP006,Meera Nair,2026-10-02,Present,09:12,17:50
+EMP007,Arjun Rao,2026-10-02,Present,08:50,17:15

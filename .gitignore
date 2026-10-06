@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+*.db
+logs/*.log
+automation/output/*
+!automation/output/.gitkeep
+automation/logs/
+automation/screenshots/
+automation/config/*credentials*
+automation/config/*secret*
+*.credential
+.DS_Store

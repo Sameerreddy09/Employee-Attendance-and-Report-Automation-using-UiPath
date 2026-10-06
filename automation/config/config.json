@@ -1,0 +1,8 @@
+{
+  "application_url": "http://127.0.0.1:5000",
+  "login_username": "attendance_bot",
+  "input_file": "automation/input/employee_attendance.csv",
+  "output_file": "automation/output/automation_results.csv",
+  "api_endpoint": "http://127.0.0.1:5000/api/attendance",
+  "xml_endpoint": "http://127.0.0.1:5000/api/attendance/xml"
+}

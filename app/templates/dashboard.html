@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Employee Attendance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <strong>Employee Attendance</strong>
+    <div><a href="{{ url_for('main.attendance') }}">Add / Update</a><a href="{{ url_for('main.logout') }}">Logout</a></div>
+  </nav>
+  <main class="container">
+    <header><h1>Attendance Dashboard</h1><p class="muted">{{ records|length }} attendance records</p></header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}<div class="alert {{ category }}">{{ message }}</div>{% endfor %}
+    {% endwith %}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Employee ID</th><th>Name</th><th>Date</th><th>Status</th><th>Check in</th><th>Check out</th></tr></thead>
+        <tbody>
+          {% for record in records %}
+          <tr>
+            <td>{{ record.employee_id }}</td><td>{{ record.employee_name }}</td><td>{{ record.date }}</td>
+            <td><span class="status {{ record.status|lower }}">{{ record.status }}</span></td>
+            <td>{{ record.check_in_time.strftime('%H:%M') if record.check_in_time else '—' }}</td>
+            <td>{{ record.check_out_time.strftime('%H:%M') if record.check_out_time else '—' }}</td>
+          </tr>
+          {% else %}<tr><td colspan="6">No attendance records found.</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+employee_id,employee_name,status,automation_result,error_type,error_message,processed_at
+EMP101,Kavya Menon,Present,SUCCESS,,,2026-10-05T18:05:02+05:30
+EMP106,Nikhil Kumar,Remote,BUSINESS_EXCEPTION,BusinessRuleException,Status must be Present Absent or Leave,2026-10-05T18:05:09+05:30
+EMP108,Manish Gupta,Present,SYSTEM_EXCEPTION,UiPath.Core.SelectorNotFoundException,Save attendance button was not found,2026-10-05T18:05:15+05:30
